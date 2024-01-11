@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+/* font-family: 'Roboto Slab',
+serif; */
+html{
+    background-image: url(Background-food.jpg);
+}
+body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto Slab', serif;
+height: 100%;
+color: rgb(218, 220, 103);
+text-decoration: solid;
+text-shadow:black 1px 1px 1px;
+
+}
+
+.headline{
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+display: flex;
+flex-wrap: wrap;
+font-size: 15px;
+text-align: center;
+padding-top: 10px;
+text-shadow: 4px 4px 4px black;
+max-width: 80%;
+}
+
+.login-check{
+text-align: center;
+font-size: 30px;
+margin-top: 20px;
+width: 150px;
+height: 45px;
+margin-bottom: 30px;
+}
+
+
+.login-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-form {
+width: 60vh;
+min-width: 35vh;
+border: 1px solid black;
+border-radius: 50px;
+background-color: rgba(7, 7, 7, 0.71);
+margin-top: 2%;
+margin-bottom: 5%;
+backdrop-filter: blur(6px);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+transition: 2s;
+
+
+}
+
+.login-box h1{
+text-align: center;
+}
+
+.input-box{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 10px;
+    font-size: 23px;
+    
+}
+
+.input-box input{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: white solid 1px;
+    color: white;
+    min-width: 35vh;
+
+}
+
+input[type='email']{
+
+padding-left: 10px;
+padding-bottom: 5px;
+font-size: 19px;
+color: rgba(218,220,103);
+background-color: transparent;
+}
+input:-webkit-autofill {
+-webkit-text-fill-color:rgba(218, 220, 103);
+-webkit-box-shadow: 0 0 50px 1000px rgba(0, 0, 0, 0.945) inset;
+}
+
+.password-text{
+    padding-top: 20px;
+}
+
+.password-tooltip{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    min-width:30vh;
+    height: 9svh;
+    margin-top: 21%;
+    margin-left: -12svh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 14px;
+    background-color: rgba(91, 72, 3, 0.999);
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+
+
+}
+.password-tooltip::after{
+    content: "";
+    position: absolute;
+}
+
+.password-text:hover .password-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.signup-pass .password-tooltip{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 33%;
+    bottom: -200%;
+
+}
+.signup-pass:hover .password-tooltip{
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+
+input[type=password]{
+
+    padding-left: 10px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: rgba(218,220,103)
+}
+input[type=text] {
+
+    padding-left: 10px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: rgba(218, 220, 103)
+}
+
+.input-box ion-icon{
+    position: absolute;
+    font-size: 1.1em;
+    right: 1%;
+}
+.check-in{
+text-align: center;
+}
+
+form{
+    padding-bottom: 30px;
+}
+button{
+font-family: 'Roboto Slab', serif;
+width: 100px;
+height: 35px;
+border-radius: 10px;
+cursor: pointer;
+margin-top: 25px;
+font-size: 17px;
+background-color: bisque;
+}
+
+button:hover{
+
+background-color: rgba(218,
+        220,
+        103);
+transition: 2s;
+
+}
+.remember-me-checkbox{
+    font-size: 20px;
+}
+
+.forgot-password-text{
+    padding-top: 20px;
+}
+
+.register-text{
+    padding-top: 20px;
+}
+
+
+.forgot-password-text{
+text-decoration: none;
+color: rgb(251, 255, 1);
+font-size: 18px;
+}
+.register-href{
+text-decoration: none;
+color: rgb(241, 245, 0);
+font-size: 18px;
+}
+
+/* Sign up */
+
+.sign-up-form{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.sign-up-container{
+position: absolute;
+width: 50vh;
+bottom: 390%;
+min-width: 15vh;
+height: 55svh;
+border: 1px solid black;
+border-radius: 50px;
+background-color: rgba(7, 7, 7, 0.71);
+margin-top: 5%;
+margin-bottom: 5%;
+backdrop-filter: blur(6px);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+
+
+
+}
+
+.sign-up-container h2{
+    text-align: center;
+}
+.sign-up-bttn{
+    margin-bottom: 30px;
+}
+
+#check{
+    display: none;
+}
+.login-box p{
+    font-size: 20px;
+}
+.signup-check{
+font-size: 20px;
+text-align: center;
+font-family: 'Roboto Slab',serif;
+padding-top: 5px;
+border: solid 1px rgba(218, 220, 103);
+border-radius: 50px;
+width: 120px;
+height: 35px;
+background-color: rgba(0, 0, 0, 0.824);
+margin-bottom: 10px;
+}
+.signup-check:hover{
+    cursor: pointer;
+    transition: 2s;
+    background-color:rgba(74, 71, 71, 0.841) ;
+}
+.back-to-login{
+    font-size: 15px;
+        text-align: center;
+        font-family: 'Roboto Slab', serif;
+        padding-top: 5px;
+        border: solid 1px rgba(218, 220, 103);
+        border-radius: 50px;
+        width: 140px;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.824);
+        margin-bottom: 10px;
+        margin-top: 30px;
+}
+.back-to-login:hover{
+    cursor: pointer;
+    transition: 1s;
+    background-color: rgba(74, 71, 71, 0.841);
+}
+
+.signup-div p{
+    font-size: 25px;
+    text-transform:uppercase;
+}
+
+.signup-div {
+    transform: scale(0);
+    transition: 1s;
+}
+
+#check:checked ~ .signup-div{
+    transform: scale(1);
+    transition: 1s;
+}
+.login-box{
+    transform: scale(1);
+    transition: 1s;
+}
+#check:checked ~ .login-box{
+transform: scale(0);
+opacity: 0;
+transition: 1s;
+
+}
+
+
+
+
+

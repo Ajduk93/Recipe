@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main_page.css">
+    <title>Heavenly Kitchen Main Page</title>
+</head>
+<header>
+    <div class="header-container">
+    <div class="header-list-container">
+    <ul>
+        <li class="header-list"><a href="">Search</a></li>
+        <li class="header-list"><a href="">About</a></li>
+        <li class="header-list"><a href="">Contact</a></li>
+        <li class="header-list"><a href="../recipe login/recipe_login.html">Register</a></li>
+        <li class="header-list"><a href="">Log out</a></li>
+    </ul>
+    </div>
+    </div>
+</header>
+<body>
+    <div class="content-container">
+    <div class="card-container">
+        <div class="picture-container">
+        <img id="food-img" alt="">
+        <label for="image-input"><ion-icon name="images-outline" id="images-outline"></ion-icon></label>
+        <input type="file" id="image-input">
+        </div>
+        <!-- Dish title container -->
+        <div class="dish-title-container">
+        <button  type="" id="dish-title-bttn">Dish name</title>
+        </button>
+        <label for="dish-title-input">
+        <input id="dish-title-input" >
+        </label>
+        </div>
+
+        <!-- Dish prep time container -->
+        <div class="prep-time-container">
+        <p>Preparation time in minutes:<input type="number" id="prep-time-input" max="100"><ion-icon name="create-outline"></ion-icon></p>
+        <p>Number of servings per person:<input type="number" id="prep-time-input" max="20"><ion-icon name="create-outline"></ion-icon></p>
+        <ion-icon name="alarm-outline" class="prep-time-icon"></ion-icon>
+    </div>
+    <div class="text-container">
+
+<!-- Ingredients card -->
+<div class="ingredients-card">
+<p>Ingredients</p>
+<div class="ingredients-input">
+<input type="text" id="input-ingredients">
+<button id="input-bttn" onclick="document.getElementById('input-ingredients').value =''"><ion-icon id="ing-btn" name="add-circle-outline" class="ingredients-button"></ion-icon></button></div>
+<ul id="ing-list">
+
+</ul>
+</div>
+<!-- Prep card -->
+<div class="prep-card">
+<p>Preparation</p>
+<div class="prep-container" id="preparation-container">
+<button><ion-icon onclick="showInputPrep()" id="prep-btn" name="add-circle-outline"></ion-icon></button>
+<form>
+<textarea type="text" id="input-prep"></textarea>
+<div id="msg"></div>
+<button type='submit' id="prep-submt" title="Post your recipe prep">Done</button>
+</form>
+</div>
+</div>
+<button onclick="topFunction()" id="backToTopBtn" title="Back to top"><ion-icon name="arrow-up-circle-outline"></ion-icon></button>
+</body>
+<script src="/main_page.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="recipe_login.css">
+    <title>Food of the Heavens</title>
+    <div class="headline">
+    <h1>Welcome to your future and only recipe book you will ever need.</h1>
+</div>
+</head>
+<body>
+<input type="checkbox" id="check" aria-hidden="true">
+<!-- Complete login-box -->
+<div class="login-box">
+<form class="login-form">
+<label for="check" aria-hidden="true" class="login-check">Login</label>
+<!-- Input box for email -->
+<div class="input-box">
+<label class="email-headline" for="email" >Email
+<br>
+<input type="email"  id="email" autocomplete="current-password" required>
+<ion-icon class="ion-icon" name="mail-open-outline"></ion-icon>
+</label>
+</div>
+<!-- Input box for password -->
+
+<div class="input-box">
+<label class="password-text" for="password">Password<span class="password-tooltip">Your password must contain: Upper and Lower case letters , number and a special character.</span>
+<br>
+<input type="password" class="password-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8" id="password"  required><ion-icon class="ion-icon" name="lock-closed-outline"></ion-icon></label>
+</div>
+
+<!-- Remember account checkbox -->
+<div class="check-in">
+<label for="remember-checkbox" class="remember-me-checkbox"><input type="checkbox" id="remember-checkbox" required>Remember me</label>
+
+<!-- Submit button -->
+<br>
+<button type="submit" class="submit-button">Log in</button>
+
+<!-- Forgotten password -->
+<p class="forgot-password-text"><a href="" class="forgot-password-text">Forgot password?</a></p>
+</div>
+<p>Don't have an account?</p>
+<label for="check" aria-hidden="true" class="signup-check">Sign Up</label>
+</form>
+</div>
+<!-- Sign up form -->
+<div class="signup-div">
+<form class="sign-up-form">
+<div class="sign-up-container" aria-hidden="true">
+    <label for="check" aria-hidden="true" class="back-to-login">Back to Login</label>
+    <p>Sign up</p>
+<div class="input-box"><label for="username"><input type="text" placeholder="Name" id="username" autocomplete="off" required></label><ion-icon name="person-outline"></ion-icon></div>
+<div class="input-box"><label for="email-reg"><input type="email" placeholder="Email" id="email-reg" required><ion-icon class="ion-icon" name="mail-open-outline"></ion-icon></label></div>
+<div class="input-box"><label for="password-reg" class="signup-pass"><input type="password" placeholder="Password" id="password-reg" required><span class="password-tooltip">Your password must contain: Upper and Lower case letters , number and a special character.</span></label><ion-icon class="ion-icon" name="lock-closed-outline"></ion-icon>
+</div>
+<button type="submit" class="sign-up-bttn">Sign up</button>
+</form>
+</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
