@@ -24,7 +24,7 @@
     <div class="card-container">
         <div class="picture-container">
         <img id="food-img" alt="">
-        <label for="image-input"><ion-icon name="images-outline" id="images-outline"></ion-icon></label>
+        <label for="image-input"><ion-icon name="images-outline" id="images-outline" title="Upload image"></ion-icon></label>
         <input type="file" id="image-input">
         </div>
         <!-- Dish title container -->
@@ -32,15 +32,18 @@
         <button  type="" id="dish-title-bttn">Dish name</title>
         </button>
         <label for="dish-title-input">
-        <input id="dish-title-input" >
-        </label>
+        <div id="dish-title-edit">
+        <input id="dish-title-input" title="Enter your Dish Title Name"><button onclick="dishTitleText()" title="Post Dish name" id='dish-title-post' type="submit" ><ion-icon name="duplicate-outline"></ion-icon></button>
+        <div id="input-title"></div>
+    </div>
+        </label><div id="error-msg"></div>
+        <button id="dish-edit" onclick="dishEditText()"><ion-icon name="create-outline" title="Edit Dish title"></ion-icon></button>
         </div>
 
         <!-- Dish prep time container -->
         <div class="prep-time-container">
-        <p>Preparation time in minutes:<input type="number" id="prep-time-input" max="100"><ion-icon name="create-outline"></ion-icon></p>
-        <p>Number of servings per person:<input type="number" id="prep-time-input" max="20"><ion-icon name="create-outline"></ion-icon></p>
-        <ion-icon name="alarm-outline" class="prep-time-icon"></ion-icon>
+        <p>Recipe preparation time<span id="prep-time-text"></span><input type="number" id="prep-time-input" max="100"><button id="prep-button"><ion-icon name="duplicate-outline"></ion-icon></button><button id="prep-button-edit"><ion-icon name="create-outline"></ion-icon></button></p>
+        <p>Number of servings<span id="servings-text"></span><input type="number" id="servings-input" max="20"><button id="servings-button"><ion-icon name="duplicate-outline"></ion-icon></button><button id="servings-button-edit"><ion-icon name="create-outline"></ion-icon></button></p>
     </div>
     <div class="text-container">
 
@@ -48,7 +51,7 @@
 <div class="ingredients-card">
 <p>Ingredients</p>
 <div class="ingredients-input">
-<input type="text" id="input-ingredients">
+<input type="text" id="input-ingredients" title="Your ingredients">
 <button id="input-bttn" onclick="document.getElementById('input-ingredients').value =''"><ion-icon id="ing-btn" name="add-circle-outline" class="ingredients-button"></ion-icon></button></div>
 <ul id="ing-list">
 
@@ -58,17 +61,21 @@
 <div class="prep-card">
 <p>Preparation</p>
 <div class="prep-container" id="preparation-container">
+    <div id="prep-text-container">
 <button><ion-icon onclick="showInputPrep()" id="prep-btn" name="add-circle-outline"></ion-icon></button>
 <form>
 <textarea type="text" id="input-prep"></textarea>
 <div id="msg"></div>
-<button type='submit' id="prep-submt" title="Post your recipe prep">Done</button>
+</div>
+<button type='submit' id="prep-submt" title="Post your recipe prep" onclick="textAreaVal()">Done</button></button>
 </form>
 </div>
+<button id="after-edit-post-button"  type='submit' onclick="textEditArea()"><ion-icon name="duplicate-outline"></ion-icon></button>
+<button id="preparation-button-edit"><ion-icon name="create-outline"></ion-icon>
 </div>
 <button onclick="topFunction()" id="backToTopBtn" title="Back to top"><ion-icon name="arrow-up-circle-outline"></ion-icon></button>
 </body>
-<script src="/main_page.js"></script>
+<script src="main_page.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
