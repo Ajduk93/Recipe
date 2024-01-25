@@ -29,11 +29,11 @@
         </div>
         <!-- Dish title container -->
         <div class="dish-title-container">
-        <button  type="" id="dish-title-bttn">Dish name</title>
+        <button  type="" id="dish-title-bttn">Dish name
         </button>
         <label for="dish-title-input">
         <div id="dish-title-edit">
-        <input id="dish-title-input" title="Enter your Dish Title Name"><button onclick="dishTitleText()" title="Post Dish name" id='dish-title-post' type="submit" ><ion-icon name="duplicate-outline"></ion-icon></button>
+        <input id="dish-title-input" title="Enter your dish Title Name"><button onclick="dishTitleText()" title="Post Dish name" id='dish-title-post' type="submit" ><ion-icon name="duplicate-outline"></ion-icon></button>
         <div id="input-title"></div>
     </div>
         </label><div id="error-msg"></div>
@@ -60,18 +60,37 @@
 <!-- Prep card -->
 <div class="prep-card">
 <p>Preparation</p>
+
 <div class="prep-container" id="preparation-container">
-    <div id="prep-text-container">
+<div id="prep-text-container">
 <button><ion-icon onclick="showInputPrep()" id="prep-btn" name="add-circle-outline"></ion-icon></button>
 <form>
 <textarea type="text" id="input-prep"></textarea>
 <div id="msg"></div>
+
+<button type='submit' id="prep-submt" title="Post your recipe prep" onclick="textAreaVal()">Done</button>
 </div>
-<button type='submit' id="prep-submt" title="Post your recipe prep" onclick="textAreaVal()">Done</button></button>
 </form>
+
+<textarea id='shown-text-area'></textarea>
+<div class="preparation-edit-delete">
+<button id="preparation-button-edit" title="Edit text"><ion-icon name="create-outline"></ion-icon></button>
+<button id="after-edit-post-button" onclick="textAreaValue()"  type='submit' title="Post"><ion-icon name="duplicate-outline"></ion-icon>
+</button>
+<!-- Yes / No for delete post Overlay -->
+<div id="delete-overlay"></div>
+<div id="delete-modal">
+    <p>Do you want to delete recipe preparation?</p>
+    <button onclick="confirmDelete(true)">Yes</button>
+    <button onclick="confirmDelete(false)">No</button>
 </div>
-<button id="after-edit-post-button"  type='submit' onclick="textEditArea()"><ion-icon name="duplicate-outline"></ion-icon></button>
-<button id="preparation-button-edit"><ion-icon name="create-outline"></ion-icon>
+
+<button id="delete-prep-post" onclick="openDeleteOverlay()" title="Delete post"><ion-icon name="trash-outline"></ion-icon>
+</button>
+</div>
+<div id="edited-post"></div>
+</div>
+</div>
 </div>
 <button onclick="topFunction()" id="backToTopBtn" title="Back to top"><ion-icon name="arrow-up-circle-outline"></ion-icon></button>
 </body>

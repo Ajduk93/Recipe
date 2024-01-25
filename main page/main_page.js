@@ -154,35 +154,62 @@ function editServings(){
     servingsInput.value = '';
 }
 
-// Ingredients button and input //
+// **Ingredients button and input** //
 
 let postIng = document.getElementById('ing-btn');
 
-postIng.addEventListener('click', function(){
 
-    let inputValue = document.getElementById('input-ingredients').value;
-    let li = document.createElement('li');
-    let text = document.createTextNode("- "+ inputValue);
-    li.appendChild(text);
-    document.getElementById('ing-list').appendChild(li);
+postIng.addEventListener('click', handleButtonClick); // Key press for input when ENTER is pressed //
+
+document.getElementById('input-ingredients').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        handleButtonClick();
+        document.getElementById('input-ingredients').value = '';
+    }
 });
 
+function handleButtonClick(){ // Function for input ingredients this can add value for ingredients also with a delete list button , which deletes list input // 
+if (document.getElementById('input-ingredients').value.trim() == ''){
+    alert("Ingredients are empty , please tell us what ingredients are you using."); // Alert if input is empty //
+}
+else{
+let deleteButton = document.createElement('button'); // Creating delete button element //
+deleteButton.style = 'background-color: rgba(2, 2, 2, 0); color: rgb(218, 220, 103);  font-size: 1rem;cursor: pointer; animation: fadeIn 0.5s ease-in-out forwards; border:none;padding-top:11px'
+// Button styling // 
 
-// Preparation button and text area //
+deleteButton.innerHTML = '<ion-icon name="trash-outline"></ion-icon>';
+deleteButton.addEventListener('click',function(){
+    li.remove(); // Event for removing list element //
+});
+let inputValue = document.getElementById('input-ingredients').value; // Getting input text value //
+    let li = document.createElement('li'); // Creating list element //
+    li.style = 'animation: fadeIn 0.5s ease-in-out forwards;'
+    let text = document.createTextNode("- "+ inputValue); // Creating text from extracted input value added - at start for readability and style //
+    li.appendChild(deleteButton);
+    li.appendChild(text);
+    document.getElementById('ing-list').appendChild(li); // Appending both text and button element to the list // 
+}
+};
+
+
+// **Preparation button and text area** //
 
 function showInputPrep (){ // Shows text area on button click
-
-document.getElementById('input-prep').style = 'display: flex;margin-inline: auto;width: 100%;height: 25vh ;margin-top: 10px;text-align: start;font-family:"Rubik",sans-serif;font-size: 20px;padding: 10px 10px 10px 10px;line-height:22px;'
-
+document.getElementById('input-prep').style = 'display: flex;margin-inline: auto;width: 93%;height: 23vh ;margin-top: 10px;text-align: start;font-family:"Rubik",sans-serif;font-size: 20px;padding: 10px 10px 10px 10px;line-height:22px;'
+document.getElementById('input-prep').style.animation = 'stretchAnimation 1s ease-in-out';
 }
 
 let prepText = document.getElementById('prep-submt'); // Submit
-let txtContainer = document.getElementById('prep-text-container'); // Text append // 
+
+let txtContainer = document.getElementById('prep-text-container');
+
 let txtArea = document.getElementById('input-prep'); // Text area //
+
 let errorMsg = document.getElementById('msg');
 
-function textAreaVal(){
 
+
+function textAreaVal(){
 txtContainer.addEventListener('submit',function(e){
     e.preventDefault();
     formVal();
@@ -202,25 +229,32 @@ let data = {};
 
 let inputData = () => {
     data["text"] = txtArea.value.trim();
-    createPrep();
+    createPrep(data);
 }
 
 let createPrep = () =>{
     txtContainer.innerHTML = `<p>${data.text}</p>`;
-}
+};
+
+
+
 
 // When "DONE" button is clicked - Edit button appears instead //
 
 let prepTextEdit = document.getElementById('preparation-button-edit')
 
-let afterEditText = document.getElementById('after-edit-post-button');
+let afterEditButton = document.getElementById('after-edit-post-button');
 
 let newTextArea = document.getElementById('shown-text-area');
+
+let newTextContainer = document.getElementById('preparation-container');
+
+let newTxtContainer = document.getElementById('txt-Container');
 
 prepText.addEventListener('click', prepEditButtonShow); // event listener for edit text button //
 
 
-function prepEditButtonShow(){  // Shows preparation edit text button //
+function prepEditButtonShow(){  // Shows edit text button //
 let recipeText = txtArea.value.trim();
 if(recipeText == ''){
     prepTextEdit.style.display = 'none'; // If text area is empty , don't show edit button  //
@@ -231,79 +265,73 @@ else{
 }
 }
 
+
+// ** A new text area for editing posted text ** //
+
 prepTextEdit.addEventListener('click', prepEditTextShow);
 
-let textAreaCreated = false;
 
-function prepEditTextShow(){
+let textAreaCreated = false; // Sets text area so that no duplicates can be made. //
+function prepEditTextShow(){ // Creates a new text area for editing paragraph text. //
 if (!textAreaCreated){
-let textArea = document.createElement("textarea");
-textArea.id = 'shown-text-area';
-document.getElementById('preparation-container').appendChild(textArea);
-txtContainer
-let lastChild = txtContainer.lastElementChild;
-lastChild.remove();
+newTextArea.style.display = 'flex';
+document.getElementById('preparation-container').appendChild(newTextArea);
 textAreaCreated = true;
 prepTextEdit.style.display = "none";
-afterEditText.style.display = 'flex';
+afterEditButton.style.display = 'flex';
+txtArea.style.display = 'flex';
+document.getElementById('delete-prep-post').style.display = 'flex';
 }
-}
-
-// !! Fix this text edit area // 
-
-function textEditArea(){
-
-txtContainer.addEventListener('submit',function(e){
-    e.preventDefault();
-    formValue();
-})};
-
-let formValue = () =>{
-    let recipeText = newTextArea.value.trim();
-    if(recipeText == ""){
-        errorMsg.innerHTML ="Post cannot be blank";
-    }
-    else{
-        newInputData();
-    }
-};
-
-let newData = {};
-
-let newInputData = () => {
-    newData["text"] = newTextArea.value.trim();
-    newCreatePrep();
-}
-
-let newCreatePrep = () =>{
-    txtContainer.innerHTML = `<p>${newData.text}</p>`;
 };
 
 
+// ** Text Area input edit ** // 
+
+function textAreaValue(){
+if (document.getElementById('shown-text-area').value === ''){
+    alert("Please edit post first") // Declines empty input // 
+}
+else { // Inputs text from text area to paragraph // 
+document.querySelector('#prep-text-container p').textContent = '';
+let getNewText = document.getElementById('shown-text-area').value;
+document.querySelector('#prep-text-container p').textContent += getNewText;
+document.getElementById('shown-text-area').style.display = 'none';
+document.getElementById('after-edit-post-button').style.display = 'none';
+if(document.getElementById('preparation-button-edit').style.display = 'block'){
+    document.getElementById('preparation-button-edit').style = 'margin-left: 30%;';
+    document.getElementById('preparation-button-edit').style.display = 'block'
+}
+textAreaCreated = false;
+}
+
+};
+
+function deletePost(){ // Deletes post for preparation paragraph //
+
+document.querySelector('#prep-text-container p').textContent = '';
+
+}
+
+function openDeleteOverlay(){ // Summons an overlay with Yes / No options //
+let getText = document.querySelector('#prep-text-container p').textContent.trim();
+if(getText === ''){ // Checks if post is empty , if it is , returns empty //
+    return;
+}
+    else{ // Else returns overplay and question modals section //
+document.getElementById('delete-overlay').style.display = "block";
+document.getElementById('delete-modal').style.display = 'block';
+    }
+}
+function confirmDelete(isConfirmed){ // Is confirmed set to true or false / depending on the button that was interacted with. And removes overlay and modal.
+    document.getElementById('delete-overlay').style.display = "none";
+    document.getElementById('delete-modal').style.display = 'none';
+if(isConfirmed){ // If button selected was Yes , deletes post by setting its value to '' // 
+    deletePost();
+    };
+};
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Back to top button//
-
+// **Back to top button** //
 function topFunction() {
     
     window.scrollTo({

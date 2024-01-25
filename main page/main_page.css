@@ -119,6 +119,7 @@ li{
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
     backdrop-filter: blur(6px);
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .picture-container label{
@@ -151,6 +152,7 @@ border-top-right-radius: 40px;
 border-top-left-radius: 40px;
 border-bottom-left-radius: 20px;
 border-bottom-right-radius: 20px;
+
 }
 #image-input{
     display: none;
@@ -166,9 +168,10 @@ border-bottom-right-radius: 20px;
     justify-content: center;
     align-items: center;
     font-family: 'Rubik', sans-serif;
-    background-color: rgb(218, 220, 103);
+    background: radial-gradient(circle, rgba(218, 220, 103, 1) 13%, rgba(0, 0, 0, 0.66) 83%);
     margin-inline: auto;
     height: 12%;
+        animation: fadeIn 2s ease-in-out forwards;
 }
 
 #dish-title-edit{
@@ -189,13 +192,14 @@ display: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(218, 220, 103) ;
+    background-color:rgba(218, 220, 103, 0) ;
     color: black;
     font-size: 25px;
     margin-right: 4%;
     margin-left: -5%;
     border: none;
     cursor: pointer;
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 #dish-title-input{
     width: 80%;
@@ -208,6 +212,7 @@ display: none;
     margin-inline: auto;
     background-color: rgba(0, 0, 0, 0.881);
     overflow: hidden;
+    animation: fadeIn 0.7s ease-in-out forwards;
 
 }
 
@@ -258,7 +263,8 @@ display: none;
     justify-content: center;
     align-items: center;
     color: black;
-    background-color: rgb(218, 220, 103);
+    background-color: rgba(218, 220, 103, 0);
+    color: rgb(218, 220, 103);
     margin-right: 4%;
     margin-left: -5%;
     border: none;
@@ -267,6 +273,7 @@ display: none;
     left: 94%;
     right: 1%;
     bottom: 40%;
+    animation: fadeIn 1s ease-in-out forwards;
 
 }
 
@@ -292,6 +299,7 @@ display: none;
     overflow: hidden;
     height: 21%;
     min-height: 150px;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 .prep-time-container p {
     display: flex;
@@ -342,6 +350,7 @@ display: none;
     border-bottom-right-radius: 40px;
     border-top: none;
     background-color: rgba(2, 2, 2, 0.617);
+    animation: fadeIn 3s ease-in-out forwards;
 }
 .text-container p{
     font-family: 'Rubik', sans-serif;
@@ -356,6 +365,7 @@ font-size: 1.7rem;
 padding-top: 5px;
 margin-left: 5%;
 cursor: pointer;
+animation: fadeIn 0.7s ease-in-out forwards;
 }
 
 #servings-button{
@@ -366,6 +376,7 @@ cursor: pointer;
     padding-top: 5px;
     margin-left: 5%;
     cursor: pointer;
+    animation: fadeIn 0.7s ease-in-out forwards;
 }
 
 #prep-button-edit{
@@ -378,17 +389,19 @@ cursor: pointer;
     margin-left: 5%;
     margin-bottom: 7px;
     cursor: pointer;
+    animation: fadeIn 0.7s ease-in-out forwards;
 }
 #servings-button-edit{
     display: none;
-        border: none;
-            background-color: rgba(2, 2, 2, 0);
-            color: rgb(218, 220, 103);
-            font-size: 1.7rem;
-            padding-top: 5px;
-            margin-left: 5%;
-            margin-bottom: 7px;
-            cursor: pointer;
+    border: none;
+    background-color: rgba(2, 2, 2, 0);
+    color: rgb(218, 220, 103);
+    font-size: 1.7rem;
+    padding-top: 5px;
+    margin-left: 5%;
+    margin-bottom: 7px;
+    cursor: pointer;
+    animation: fadeIn 0.7s ease-in-out forwards;
 }
 #prep-container-edit {
     display: none;
@@ -478,7 +491,7 @@ cursor: pointer;
     align-items: start;
     padding-left: 20px;
     padding-right: 10px;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     margin-top: 15px;
     overflow: hidden;
     
@@ -486,6 +499,14 @@ cursor: pointer;
 #ing-list li {
     padding-top: 5px;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: auto;
+    margin-top: auto;
 
 }
 
@@ -512,7 +533,6 @@ cursor: pointer;
     text-align: left;
     font-size: 1.2rem;
     line-height: 30px;
-    
 }
 
 .prep-card p {
@@ -575,6 +595,7 @@ align-items: center;
 justify-content: center;
 color: rgb(218, 220, 103);
 }
+
 #input-prep {
     border: solid black 2px;
     border-radius: 7%;
@@ -584,16 +605,19 @@ color: rgb(218, 220, 103);
     background-color:rgb(218, 220, 103) ;
     color: black;
     text-align: left;
+    transition: height 0.1s ease-in-out;
+
 }
+
 #preparation-button-edit{
     display: none;
     background-color: rgba(2, 2, 2, 0);
     color: rgb(218, 220, 103);
     font-size: 1.7rem;
     padding-top: 5px;
-    margin-left: 46.5%;
     margin-bottom: 7px;
     cursor: pointer;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 #msg{
     font-family: 'Rubik', sans-serif;
@@ -607,9 +631,10 @@ color: rgb(218, 220, 103);
 }
 
 #shown-text-area {
+    display: none;
     margin-inline: auto;
-    width: 100%;
-    height: 25vh;
+    width: 93%;
+    height: 23vh;
     margin-top: 10px;
     text-align: start;
     font-family: "Rubik", sans-serif;
@@ -623,6 +648,8 @@ color: rgb(218, 220, 103);
     background-color: rgb(218, 220, 103);
     color: black;
     text-align: left;
+    margin-bottom: 30px;
+    animation: secondTextAreaStretch 1s ease-in-out;
 }
 
 #after-edit-post-button{
@@ -631,9 +658,102 @@ color: rgb(218, 220, 103);
     color: rgb(218, 220, 103);
     font-size: 1.7rem;
     padding-top: 5px;
-    margin-left: 46.5%;
     margin-bottom: 7px;
     cursor: pointer;
+    margin-left: 30%;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+#delete-prep-post{
+    display: none;
+    background-color: rgba(2, 2, 2, 0);
+    color: rgb(218, 220, 103);
+    font-size: 1.7rem;
+    padding-top: 5px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    margin-right: 30%;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+.preparation-edit-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+/* Delete preparation post overlay */
+
+#delete-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(2, 2, 2, 0.833);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-radius: 30px;
+    max-width: 90%;
+    min-width: 280px;
+    animation: fadeIn 0.7s ease-in-out forwards;
+}
+#delete-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+/* Additional styles for the close button */
+#delete-modal button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: rgb(218, 220, 103);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    min-width: 20%;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-left: 18%;
+
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+@keyframes stretchAnimation {
+    0%{
+        height: 0vh;
+    }
+    100% {
+        height: 23vh;
+    }
+}
+@keyframes secondTextAreaStretch {
+    0%{
+        height: 0vh;
+    }
+    100% {
+        height: 23vh;
+    }
 }
 /* Back to top button */
 
