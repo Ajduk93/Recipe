@@ -1,100 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main_page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main_page.css" />
+    <script src="main_page.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <title>Heavenly Kitchen Main Page</title>
-</head>
-<header>
-    <div class="header-container">
-    <div class="header-list-container">
-    <ul>
-        <li class="header-list"><a href="">Search</a></li>
-        <li class="header-list"><a href="">About</a></li>
-        <li class="header-list"><a href="">Contact</a></li>
-        <li class="header-list"><a href="../recipe login/recipe_login.html">Register</a></li>
-        <li class="header-list"><a href="">Log out</a></li>
-    </ul>
-    </div>
-    </div>
-</header>
-<body>
-    <div class="content-container">
-    <div class="card-container">
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-list-container">
+          <ul>
+            <li class="header-list"><a href="">Search</a></li>
+            <li class="header-list"><a href="">About</a></li>
+            <li class="header-list"><a href="">Contact</a></li>
+            <li class="header-list">
+              <a href="../recipe login/recipe_login.html">Register</a>
+            </li>
+            <li class="header-list"><a href="">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content-container" id="contentContainer">
+      <div class="card-container" id="cardContainer">
         <div class="picture-container">
-        <img id="food-img" alt="">
-        <label for="image-input"><ion-icon name="images-outline" id="images-outline" title="Upload image"></ion-icon></label>
-        <input type="file" id="image-input">
+          <img id="food-img" alt="" src="./placeholder.jpg" />
+          <label for="image-input">
+            <ion-icon
+              name="images-outline"
+              id="images-outline"
+              title="Upload image"
+            >
+            </ion-icon>
+          </label>
+          <input type="file" id="image-input" />
         </div>
         <!-- Dish title container -->
         <div class="dish-title-container">
-        <button  type="" id="dish-title-bttn">Dish name
-        </button>
-        <label for="dish-title-input">
-        <div id="dish-title-edit">
-        <input id="dish-title-input" title="Enter your dish Title Name"><button onclick="dishTitleText()" title="Post Dish name" id='dish-title-post' type="submit" ><ion-icon name="duplicate-outline"></ion-icon></button>
-        <div id="input-title"></div>
-    </div>
-        </label><div id="error-msg"></div>
-        <button id="dish-edit" onclick="dishEditText()"><ion-icon name="create-outline" title="Edit Dish title"></ion-icon></button>
+          <button type="button" id="dish-title-bttn">Dish name</button>
+          <label for="dish-title-input">
+            <div id="dish-title-edit">
+              <input id="dish-title-input" title="Enter your dish Title Name" />
+              <button
+                onclick="dishTitleText()"
+                title="Post Dish name"
+                id="dish-title-post"
+                type="submit"
+              >
+                <ion-icon name="duplicate-outline"></ion-icon>
+              </button>
+              <div id="input-title"></div>
+            </div>
+          </label>
+          <div id="error-msg"></div>
+          <button id="dish-edit" onclick="dishEditText()">
+            <ion-icon name="create-outline" title="Edit Dish title"></ion-icon>
+          </button>
         </div>
-
         <!-- Dish prep time container -->
         <div class="prep-time-container">
-        <p>Recipe preparation time<span id="prep-time-text"></span><input type="number" id="prep-time-input" max="100"><button id="prep-button"><ion-icon name="duplicate-outline"></ion-icon></button><button id="prep-button-edit"><ion-icon name="create-outline"></ion-icon></button></p>
-        <p>Number of servings<span id="servings-text"></span><input type="number" id="servings-input" max="20"><button id="servings-button"><ion-icon name="duplicate-outline"></ion-icon></button><button id="servings-button-edit"><ion-icon name="create-outline"></ion-icon></button></p>
+          <p>
+            Preparation time
+            <span id="prep-time-text"></span>
+            <input type="number" id="prep-time-input" max="100" />
+            <button id="prep-button">
+              <ion-icon name="duplicate-outline"></ion-icon>
+            </button>
+            <button id="prep-button-edit">
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </p>
+          <p>
+            Number of servings
+            <span id="servings-text"></span>
+            <input type="number" id="servings-input" max="20" />
+            <button id="servings-button">
+              <ion-icon name="duplicate-outline"></ion-icon>
+            </button>
+            <button id="servings-button-edit">
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+          </p>
+        </div>
+
+        <!-- Ingredients card -->
+
+        <div class="text-container">
+          <div class="ingredients-card">
+            <p>Ingredients</p>
+            <div class="ingredients-input">
+              <input
+                type="text"
+                id="input-ingredients"
+                title="Your ingredients"
+              />
+              <button
+                id="input-bttn"
+                onclick="document.getElementById('input-ingredients').value =''"
+              >
+                <ion-icon
+                  id="ing-btn"
+                  name="add-circle-outline"
+                  class="ingredients-button"
+                >
+                </ion-icon>
+              </button>
+            </div>
+            <ul id="ing-list"></ul>
+          </div>
+
+          <!-- Prep card -->
+
+          <div class="prep-card">
+            <p>Preparation</p>
+
+            <div class="prep-container" id="preparation-container">
+              <div id="prep-text-container">
+                <button>
+                  <ion-icon
+                    onclick="showInputPrep()"
+                    id="prep-btn"
+                    name="add-circle-outline"
+                  >
+                  </ion-icon>
+                </button>
+                <form>
+                  <textarea type="text" id="input-prep"></textarea>
+                  <div id="msg"></div>
+                  <button
+                    type="submit"
+                    id="prep-submt"
+                    title="Post your recipe prep"
+                    onclick="textAreaVal()"
+                  >
+                    Done
+                  </button>
+                </form>
+              </div>
+
+              <textarea id="shown-text-area"></textarea>
+              <div class="preparation-edit-delete">
+                <!-- !Fix size and placing on mobile -->
+                <button id="preparation-button-edit" title="Edit text">
+                  <ion-icon name="create-outline"></ion-icon>
+                </button>
+                <!-- !Fix size on mobile -->
+                <button
+                  id="after-edit-post-button"
+                  onclick="textAreaValue()"
+                  type="submit"
+                  title="Post"
+                >
+                  <ion-icon name="duplicate-outline"></ion-icon>
+                </button>
+                <!-- Yes / No for delete post Overlay -->
+                <div id="delete-overlay"></div>
+                <div id="delete-modal">
+                  <p>Do you want to delete recipe preparation?</p>
+                  <button onclick="confirmDelete(true)">Yes</button>
+                  <button onclick="confirmDelete(false)">No</button>
+                </div>
+                <!-- !Fix size on mobile -->
+                <button
+                  id="delete-prep-post"
+                  onclick="openDeleteOverlay()"
+                  title="Delete post"
+                >
+                  <ion-icon name="trash-outline"></ion-icon>
+                </button>
+              </div>
+              <div id="edited-post"></div>
+            </div>
+          </div>
+        </div>
+        <button id="backToTopBtn" onclick="topFunction()" title="Back to top">
+          <ion-icon name="arrow-up-circle-outline"></ion-icon>
+        </button>
+      </div>
+      <button type="button" id="duplicate-card-button" title="Create new card">
+        <ion-icon name="duplicate-outline"></ion-icon>
+      </button>
+      <div id="duplicated-card"></div>
     </div>
-    <div class="text-container">
-
-<!-- Ingredients card -->
-<div class="ingredients-card">
-<p>Ingredients</p>
-<div class="ingredients-input">
-<input type="text" id="input-ingredients" title="Your ingredients">
-<button id="input-bttn" onclick="document.getElementById('input-ingredients').value =''"><ion-icon id="ing-btn" name="add-circle-outline" class="ingredients-button"></ion-icon></button></div>
-<ul id="ing-list">
-
-</ul>
-</div>
-<!-- Prep card -->
-<div class="prep-card">
-<p>Preparation</p>
-
-<div class="prep-container" id="preparation-container">
-<div id="prep-text-container">
-<button><ion-icon onclick="showInputPrep()" id="prep-btn" name="add-circle-outline"></ion-icon></button>
-<form>
-<textarea type="text" id="input-prep"></textarea>
-<div id="msg"></div>
-
-<button type='submit' id="prep-submt" title="Post your recipe prep" onclick="textAreaVal()">Done</button>
-</div>
-</form>
-
-<textarea id='shown-text-area'></textarea>
-<div class="preparation-edit-delete">
-<button id="preparation-button-edit" title="Edit text"><ion-icon name="create-outline"></ion-icon></button>
-<button id="after-edit-post-button" onclick="textAreaValue()"  type='submit' title="Post"><ion-icon name="duplicate-outline"></ion-icon>
-</button>
-<!-- Yes / No for delete post Overlay -->
-<div id="delete-overlay"></div>
-<div id="delete-modal">
-    <p>Do you want to delete recipe preparation?</p>
-    <button onclick="confirmDelete(true)">Yes</button>
-    <button onclick="confirmDelete(false)">No</button>
-</div>
-
-<button id="delete-prep-post" onclick="openDeleteOverlay()" title="Delete post"><ion-icon name="trash-outline"></ion-icon>
-</button>
-</div>
-<div id="edited-post"></div>
-</div>
-</div>
-</div>
-<button onclick="topFunction()" id="backToTopBtn" title="Back to top"><ion-icon name="arrow-up-circle-outline"></ion-icon></button>
-</body>
-<script src="main_page.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
 </html>
