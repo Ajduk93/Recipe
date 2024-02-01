@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="search.css" />
+    <script src="/search recipes/search_page.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Create Recipe</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-list-container">
+          <ul>
+            <li class="header-list"><a href="">Search Recipes</a></li>
+            <li class="header-list">
+              <a href="/main page/main_page.html">Create Recipe</a>
+            </li>
+            <li class="header-list"><a href="">Contact</a></li>
+            <li class="header-list">
+              <a href="../recipe login/recipe_login.html">Register</a>
+            </li>
+            <li class="header-list"><a href="">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Recipe wrapper -->
+
+    <div class="recipe-wrapper">
+      <div class="recipe-container">
+        <div class="food-name">This is random recipe name</div>
+        <div class="recipe-image-container">
+          <img class="recipe-images" src="/pexels-shay-wood-574111.jpg" />
+        </div>
+        <div class="overlay-container" id="overlay-display">
+          <div class="ingredients-container">
+          <div class="ingredients-title">Ingredients:</div>
+          <div class="ingredients-text">some text here.</div>
+          </div>
+          <div class="preparation-container">
+            <div class="preparation-title">Preparation:</div>
+            <div class="preparation-text">some prep text here 
+            </div>
+          </div>
+          <button class="close-overlay" id="close-overlay" onclick="closeOverlay()"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="buttons-container">
+          <div class="view-recipe-overlay">
+        <button class="view-recipe-button" id="show-recipe">View Recipe</button></div>
+          <div class="favorite-share-buttons">
+              <button class="button-favorite" id="button-favorite-id">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+              <button class="share-button" id="share-button-id"><ion-icon name="share-social-outline"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second container -->
+
+      <div class="recipe-container">
+        <div class="food-name">Avadakedavra</div>
+        <div class="recipe-image-container">
+          <img class="recipe-images" src="" />
+        </div>
+        <div class="overlay-container">
+          <div class="ingredients-container">
+          <div class="ingredients-title">Ingredients:</div>
+          <div class="ingredients-text">some text here.</div>
+          </div>
+          <div class="preparation-container">
+            <div class="preparation-title">Preparation:</div>
+            <div class="preparation-text">some prep text here 
+            </div>
+          </div>
+          <button class="close-overlay"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="buttons-container">
+          <div class="view-recipe-overlay">
+          <button class="view-recipe-button">View Recipe</button></div>
+          <div class="favorite-share-buttons">
+              <button class="button-favorite"
+              id="button-favorite-id">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+              <button class="share-button" id="share-button-id"><ion-icon name="share-social-outline"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

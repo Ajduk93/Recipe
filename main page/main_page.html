@@ -14,15 +14,15 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <title>Heavenly Kitchen Main Page</title>
+    <title>Create Recipe</title>
   </head>
   <body>
     <header>
       <div class="header-container">
         <div class="header-list-container">
           <ul>
-            <li class="header-list"><a href="">Search</a></li>
-            <li class="header-list"><a href="">About</a></li>
+            <li class="header-list"><a href="/search recipes/search.html">Search Recipes</a></li>
+            <li class="header-list"><a href="">Create Recipe</a></li>
             <li class="header-list"><a href="">Contact</a></li>
             <li class="header-list">
               <a href="../recipe login/recipe_login.html">Register</a>
@@ -44,11 +44,11 @@
             >
             </ion-icon>
           </label>
-          <input type="file" id="image-input" />
+          <input type="file" id="image-input" onclick="imageInput()" />
         </div>
         <!-- Dish title container -->
         <div class="dish-title-container">
-          <button type="button" id="dish-title-bttn">Dish name</button>
+          <button type="button" id="dish-title-bttn" class="common-button-class" onclick="dishTitleVanish(event)">Dish name</button>
           <label for="dish-title-input">
             <div id="dish-title-edit">
               <input id="dish-title-input" title="Enter your dish Title Name" />
@@ -107,12 +107,12 @@
               />
               <button
                 id="input-bttn"
-                onclick="document.getElementById('input-ingredients').value =''"
               >
                 <ion-icon
                   id="ing-btn"
                   name="add-circle-outline"
                   class="ingredients-button"
+                  onclick="ingredientsButton()"
                 >
                 </ion-icon>
               </button>

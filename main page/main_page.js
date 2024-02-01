@@ -9,7 +9,7 @@ inputImage.addEventListener('change',function () {
   foodImage.src = URL.createObjectURL(inputImage.files[0]);
 })};
 
-imageInput();
+
 
 // Dish title buttons //
 
@@ -17,17 +17,24 @@ let dishTitleDoc = document.getElementById("dish-title-edit");
 let dishTitlebtn = document.getElementById("dish-title-bttn");
 let dishEditor = document.getElementById("dish-edit");
 
-let dishTitleVanish = dishTitlebtn.addEventListener("click", function () {
+document.querySelectorAll('.common-button-class').forEach(function(button){button.addEventListener('click', dishTitleVanish)});
+
+
+function dishTitleVanish(event){
+  let button = event.currentTarget;
+
   if (dishTitleDoc.style.display === "none") {
     dishTitleDoc.style.display = "flex";
   } else {
     dishTitleDoc.style.display = "none";
   }
-});
+
+};
 
 function dishTitleText() {
   // Gets the input value //
   let inputText = document.getElementById("dish-title-input").value;
+  
   // Appends the text value to the appendTextEle //
   let appendTextEle = document.getElementById("input-title");
   if (inputText === "") {
@@ -45,6 +52,7 @@ function dishTitleText() {
 
     document.getElementById("error-msg").textContent = "";
   }
+  event.currentTarget;
 }
 
 // Dish edit button //
@@ -146,7 +154,8 @@ function editServings() {
 
 let postIng = document.getElementById("ing-btn");
 
-postIng.addEventListener("click", handleButtonClick); // Key press for input when ENTER is pressed //
+function ingredientsButton(){
+postIng.addEventListener("click", handleButtonClick);} // Key press for input when ENTER is pressed //
 
 document
   .getElementById("input-ingredients")
@@ -180,6 +189,7 @@ function handleButtonClick() {
     li.appendChild(deleteButton);
     li.appendChild(text);
     document.getElementById("ing-list").appendChild(li); // Appending both text and button element to the list //
+    document.getElementById('input-ingredients').value =''
   }
 }
 
@@ -350,22 +360,18 @@ function scrollFunction() {
   }
 }
 
-
 // Duplicate dish card //
 
-document.getElementById('duplicate-card-button').addEventListener('click',duplicateMainDiv);
+const mainContainer = document.getElementById('contentContainer');
+const originalMainDiv = document.querySelector('.content-container');
+const duplicateButton = document.getElementById('duplicate-card-button');
 
-let maindivCount = 1;
+duplicateButton.addEventListener('click',duplicateMainDiv);
 
 function duplicateMainDiv() {
-  const mainContainer = document.getElementById('contentContainer');
-  const originalMainDiv = document.querySelector('.content-container');
-  const newMainDiv = originalMainDiv.cloneNode(true);
 
-  maindivCount++;
-  newMainDiv.id = `mainContainer${maindivCount}`;
+  const newMainDiv = originalMainDiv.cloneNode(true);
 
     mainContainer.appendChild(newMainDiv);
 
-}
-
+};
